@@ -1,0 +1,64 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "palette": {
+        "os": "#ACB0BE",
+        "closer": "p:os",
+        "pink": "#ea76cb",
+        "lavender": "#7287FD",
+        "blue":  "#1e66f5",
+        "white": "#EFF1F5",
+        "green": "#40A02B",
+        "foregroundGrey": "#4C4F69",
+        "brightWhite": "#BCC0CC",
+        "cyan": "#179299",
+        "yellow": "#DF8E1D"
+
+  },
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "foreground": "p:cyan",
+          "template": " {{ .CurrentDate | date .Format }} ",
+          "options": {
+            "time_format": "Kitchen"
+          },
+          "style": "plain",
+          "type": "time"
+        },
+        {
+          "type": "path",
+          "style": "powerline",
+          "foreground": "p:lavender",
+        "options":{
+          "home_icon": "<p:cyan>~ </>",
+          "style": "agnoster_full",
+          "mixed_threshold": 6
+        }
+      },
+      {
+        "type": "executiontime",
+        "style": "powerline",
+        "foreground": "p:cyan",
+        "background": "p:white",
+        "template": "<p:cyan>{{ .FormattedMs }}</> ",
+        "options": {
+          "threshold": 500,
+          "style": "galvestonms",
+          "always_enabled": true
+        }
+      },
+      {
+        "style": "plain",
+        "foreground": "p:closer",
+        "template": "<p:blue>\uf105</>",
+        "type": "text"
+      }
+    ],
+      "type": "prompt"
+    }
+  ],
+  "final_space": true,
+  "version": 4
+}
